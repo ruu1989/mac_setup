@@ -36,3 +36,10 @@ dockutil --add /Applications/Sublime\ Text.app
 dockutil --add ~/Downloads --view grid --display folder
 dockutil --add /Applications --view grid --display folder
 
+echo ""
+echo ""
+echo "Sweet! Now:"
+echo " > Apple Icon -> Preferences -> General -> Use dark menu bar and dock."
+echo " > Open and log into dropbox and allow it to sync"
+echo " > Run ./post_setup.sh"
+
