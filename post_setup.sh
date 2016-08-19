@@ -6,5 +6,4 @@ chmod 0600 ~/.ssh/id_rsa
 cp ~/Dropbox/id_rsa.pub ~/.ssh
 
 # Copy .dotfiles
-cp .profile ~/.profile
-cp .vimrc ~/.vimrc
+./update_dotfiles.sh
