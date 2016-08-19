@@ -6,6 +6,7 @@ sudo hostname ROTTENROOT
 # Configure git
 git config --global user.email "ruu1989@me.com"
 git config --global user.name "Ruu Mouat"
+git config --global push.default simple
 
 # Install Pip
 sudo easy_install pip
