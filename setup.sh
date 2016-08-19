@@ -16,7 +16,7 @@ brew install bash-git-prompt python3
 brew tap caskroom/cask
 
 # Install Apps
-brew cask install google-chrome pycharm rubymine phpstorm sequel-pro sublime-text
+brew cask install google-chrome pycharm rubymine phpstorm sequel-pro sublime-text dropbox iterm2
 
 # Install DockUtil
 curl https://raw.githubusercontent.com/kcrawford/dockutil/master/scripts/dockutil -o /usr/local/bin/dockutil
@@ -25,7 +25,7 @@ chmod a+x /usr/local/bin/dockutil
 # Minimize Dock
 dockutil --remove all
 dockutil --add /Applications/Google\ Chrome.app
-dockutil --add /Applications/Utilities/Terminal.app
+dockutil --add /Applications/iTerm.app
 dockutil --add /Applications/Mail.app
 dockutil --add /Applications/iTunes.app
 dockutil --add /Applications/PyCharm.app
