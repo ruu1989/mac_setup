@@ -3,14 +3,21 @@
 # Set Hostname
 sudo hostname ROTTENROOT
 
+# Configure git
+git config --global user.email "ruu1989@me.com"
+git config --global user.name "Ruu Mouat"
+
 # Install Pip
 sudo easy_install pip
+
+# Install venv globally
+sudo pip install virtualenv
 
 # Install Brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install Brew Apps
-brew install bash-git-prompt python3
+brew install bash-git-prompt python3 fortune cowsay
 
 # Add Cask
 brew tap caskroom/cask
@@ -42,4 +49,3 @@ echo "Sweet! Now:"
 echo " > Apple Icon -> Preferences -> General -> Use dark menu bar and dock."
 echo " > Open and log into dropbox and allow it to sync"
 echo " > Run ./post_setup.sh"
-
