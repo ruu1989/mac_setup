@@ -44,9 +44,31 @@ dockutil --add /Applications/Sublime\ Text.app
 dockutil --add ~/Downloads --view grid --display folder
 dockutil --add /Applications --view grid --display folder
 
+# Launch Dropbox to enable login and setup
+/Applications/Dropbox.app/Contents/MacOS/Dropbox &
+
+# Wait for dropbox to begin sync
+while [ ! -s ~/Dropbox/id_rsa.enc ] ;
+do
+    sleep 1
+done
+
+while [ ! -s ~/Dropbox/id_rsa.pub ] ;
+do
+    sleep 1
+done
+
+# Decrypt private key
+mkdir -p ~/.ssh
+openssl enc -d -aes-256-cbc -in ~/Dropbox/id_rsa.enc -out ~/.ssh/id_rsa
+chmod 0600 ~/.ssh/id_rsa
+cp ~/Dropbox/id_rsa.pub ~/.ssh
+
+# Copy .dotfiles
+./update_dotfiles.sh
+
+
 echo ""
 echo ""
 echo "Sweet! Now:"
 echo " > Apple Icon -> Preferences -> General -> Use dark menu bar and dock."
-echo " > Open and log into dropbox and allow it to sync"
-echo " > Run ./post_setup.sh"
