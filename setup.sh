@@ -1,7 +1,13 @@
 #!/bin/bash
 
+if [ $# -ne 2 ];
+then
+    echo "Usage:"
+    echo "\t./setup.sh <hostname>"
+fi
+
 # Set Hostname
-sudo hostname ROTTENROOT
+sudo hostname $1
 
 # Configure git
 git config --global user.email "ruu1989@me.com"
