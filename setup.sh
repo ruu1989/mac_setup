@@ -23,8 +23,27 @@ brew install bash-git-prompt python3 fortune cowsay
 # Add Cask
 brew tap caskroom/cask
 
+function install_cask_with_retry {
+    brew cask install $1
+    if [ $? -ne 0 ]
+    then
+        echo "Uh oh, failed to install... Sod it; let's try again!"
+        brew cask install $1
+    fi
+}
+
 # Install Apps
-brew cask install google-chrome pycharm rubymine phpstorm sequel-pro sublime-text dropbox iterm2
+install_cask_with_retry google-chrome
+install_cask_with_retry pycharm
+install_cask_with_retry rubymine
+install_cask_with_retry phpstorm
+install_cask_with_retry sequel-pro
+install_cask_with_retry sublime-text
+install_cask_with_retry dropbox
+install_cask_with_retry iterm2
+install_cask_with_retry mamp
+install_cask_with_retry vagrant
+install_cask_with_retry virtualbox
 
 # Install DockUtil
 curl https://raw.githubusercontent.com/kcrawford/dockutil/master/scripts/dockutil -o /usr/local/bin/dockutil
@@ -41,6 +60,8 @@ dockutil --add /Applications/PhpStorm.app
 dockutil --add /Applications/RubyMine.app
 dockutil --add /Applications/Sequel\ Pro.app
 dockutil --add /Applications/Sublime\ Text.app
+dockutil --add /Applications/MAMP/MAMP.app
+dockutil --add /Applications/Virtualbox.app
 dockutil --add ~/Downloads --view grid --display folder
 dockutil --add /Applications --view grid --display folder
 
