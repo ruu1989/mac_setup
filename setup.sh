@@ -94,8 +94,5 @@ cp ~/Dropbox/id_rsa.pub ~/.ssh
 # Copy .dotfiles
 ./update_dotfiles.sh
 
-
-echo ""
-echo ""
-echo "Sweet! Now:"
-echo " > Apple Icon -> Preferences -> General -> Use dark menu bar and dock."
+# Uses apple script to switch to the dark theme
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
