@@ -1,14 +1,6 @@
 ssh-add
 fortune -s | cowsay
 
-# Fire up bash prompt if it exists, if not prompt me to install it.
-if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Default
-  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
-else
-  echo 'brew install bash-git-prompt'
-fi
-
 # History save-a-tron.
 mkdir -p ~/.history  # Always create history dir if it doesn't exist.
 prompt() {
@@ -23,6 +15,14 @@ history_search() {
   grep "$@" ~/.history/all
 }
 alias h=history_search
+
+# Fire up bash prompt if it exists, if not prompt me to install it.
+if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Default
+  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+else
+  echo 'brew install bash-git-prompt'
+fi
 
 # Other Aliases
 alias fucking='sudo'
