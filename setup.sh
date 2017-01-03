@@ -50,6 +50,7 @@ install_cask_with_retry iterm2
 install_cask_with_retry mamp
 install_cask_with_retry vagrant
 install_cask_with_retry virtualbox
+install_cask_with_retry dashlane
 
 # Install DockUtil
 curl https://raw.githubusercontent.com/kcrawford/dockutil/master/scripts/dockutil -o /usr/local/bin/dockutil
@@ -58,7 +59,7 @@ chmod a+x /usr/local/bin/dockutil
 # Minimize Dock
 dockutil --remove all
 dockutil --add /Applications/Google\ Chrome.app
-dockutil --add /Applications/iTerm.app
+dockutil --add /Applications/Utilities/Terminal.app
 dockutil --add /Applications/Mail.app
 dockutil --add /Applications/iTunes.app
 dockutil --add /Applications/PyCharm.app
