@@ -9,6 +9,21 @@ else
   echo 'brew install bash-git-prompt'
 fi
 
+# History save-a-tron.
+mkdir -p ~/.history  # Always create history dir if it doesn't exist.
+prompt() {
+
+  # Store all commands in a file
+  echo "$(date "+%Y-%m-%d.%H:%M:%S") $HOSTNAME $(history 1)" >> ~/.history/all
+  echo "$(date "+%Y-%m-%d.%H:%M:%S") $HOSTNAME $(history 1)" >> ~/.history/$(date "+%Y-%m-%d")
+}
+export PROMPT_COMMAND=prompt
+
+history_search() {
+  grep "$@" ~/.history/all
+}
+alias h=history_search
+
 # Other Aliases
 alias fucking='sudo'
 alias be='bundle exec'
