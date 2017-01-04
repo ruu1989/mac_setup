@@ -1,19 +1,16 @@
-" Highlight syntax
-syntax on
+syntax enable
+if has('gui_running')
+	set background=dark
+	colorscheme solarized
+endif
 
-" Allow backspace past start of newline
-set backspace=indent,eol,start
-
-" Indent
-set autoindent
-
-" Highlight line cursor is on
-set ruler
-
-" Show line numbers
 set number
 
-" Spaces, right? ;)
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
 set shiftwidth=4
-set softtabstop=4
+" On pressing tab, insert 4 spaces
 set expandtab
+
