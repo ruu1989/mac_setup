@@ -24,6 +24,8 @@ else
   echo 'brew install bash-git-prompt'
 fi
 
+alias ls='ls -G'
+
 # Other Aliases
 alias fucking='sudo'
 alias be='bundle exec'
