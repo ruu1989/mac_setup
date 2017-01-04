@@ -46,7 +46,7 @@ install_cask_with_retry phpstorm
 install_cask_with_retry sequel-pro
 install_cask_with_retry sublime-text
 install_cask_with_retry dropbox
-install_cask_with_retry iterm2
+install_cask_with_retry slack
 install_cask_with_retry mamp
 install_cask_with_retry vagrant
 install_cask_with_retry virtualbox
@@ -61,6 +61,7 @@ dockutil --remove all
 dockutil --add /Applications/Google\ Chrome.app
 dockutil --add /Applications/Utilities/Terminal.app
 dockutil --add /Applications/Mail.app
+dockutil --add /Applications/Slack.app
 dockutil --add /Applications/iTunes.app
 dockutil --add /Applications/PyCharm.app
 dockutil --add /Applications/PhpStorm.app
