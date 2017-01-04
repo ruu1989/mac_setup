@@ -1,0 +1,25 @@
+[user]
+	name = Ruu Mouat
+	email = rm@getadministrate.com
+[alias]
+    sub = !open "https://github.com/$(git remote -v | sed -e '/^origin.*(push)$/!d' -e 's/.*:\\(.*\\)\\.git.*/\\1/')/compare/development...$(git symbolic-ref --short HEAD)?expand=1"
+	tree = log --graph --oneline --decorate --all
+	st = status
+	co = checkout
+	di = diff
+	br = branch
+	fix = commit -a --amend -C HEAD
+[branch]
+	autosetupmerge = 0
+[color]
+	ui = true
+[push]
+	default = current
+[core]
+	editor = vim
+	excludesfile = /Users/ruu/.gitignore_global
+	autocrlf = input
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	ignorecase = false
+[init]
+	templatedir = ~/.git_template
