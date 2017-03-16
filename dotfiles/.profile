@@ -26,9 +26,15 @@ fi
 
 alias ls='ls -G'
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Other Aliases
 alias fucking='sudo'
 alias be='bundle exec'
 
+# VM Helpers
+alias vm='bash -c "cd ~/Projects/Administrate/cuisinier/virtual-machines/development; vagrant ssh \$0"'
+
 # Fire up a venv
-alias venv_install="virtualenv --setuptools --no-site-packages --prompt=\"(${PWD##*/}) \" .virtualenv && source .virtualenv/bin/activate && pip install --upgrade pip && pip install --upgrade setuptools --no-use-wheel && if [ -a requirements.txt ]; then pip install --upgrade --requirement requirements.txt; fi"
+alias venv_install="virtualenv --setuptools --no-site-packages --prompt=\"(${PWD##*/}) \" .virtualenv && source .virtualenv/bin/activate && pip install --upgrade pip setuptools && if [ -a requirements.txt ]; then pip install --upgrade --no-binary :all: --allow-all-external --requirement requirements.txt; fi"
+alias venv3_install="virtualenv -p python3 --setuptools --no-site-packages --prompt=\"(${PWD##*/}) \" .virtualenv && source .virtualenv/bin/activate && pip install --upgrade pip && pip install --upgrade setuptools --no-use-wheel && if [ -a requirements.txt ]; then pip install --upgrade --requirement requirements.txt; fi"

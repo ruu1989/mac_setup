@@ -24,7 +24,12 @@ sudo pip install virtualenv
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install Brew Apps
-brew install bash-git-prompt python3 fortune cowsay mysql npm
+brew install bash-git-prompt python3 fortune cowsay mysql npm  rbenv ruby-build
+
+rbenv install 2.3.3
+rbenv global 2.3.3
+
+gem install bundler
 
 # Add Cask
 brew tap caskroom/cask
