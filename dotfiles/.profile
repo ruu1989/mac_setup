@@ -24,6 +24,13 @@ else
   echo 'brew install bash-git-prompt'
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 alias ls='ls -G'
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

@@ -1,14 +1,15 @@
 [user]
 	name = Ruu Mouat
-	email = rm@getadministrate.com
+	email = rm@insight-software.co.uk
 [alias]
     sub = !open "https://github.com/$(git remote -v | sed -e '/^origin.*(push)$/!d' -e 's/.*:\\(.*\\)\\.git.*/\\1/')/compare/development...$(git symbolic-ref --short HEAD)?expand=1"
-	tree = log --graph --oneline --decorate --all
-	st = status
-	co = checkout
-	di = diff
-	br = branch
-	fix = commit -a --amend -C HEAD
+    tree = log --graph --oneline --decorate --all
+    st = status
+    co = checkout
+    di = diff
+    br = branch
+    fix = commit -a --amend -C HEAD
+    shove = !git commit -a --amend --no-edit && git push -f
 [branch]
 	autosetupmerge = 0
 [color]
