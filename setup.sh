@@ -24,7 +24,7 @@ sudo pip install virtualenv
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install Brew Apps
-brew install bash-git-prompt python3 fortune cowsay mysql npm rbenv ruby-build bash-completion
+brew install bash-git-prompt python3 fortune cowsay mysql npm rbenv ruby-build bash-completion dark-mode
 
 rbenv install 2.3.3
 rbenv global 2.3.3
@@ -101,5 +101,5 @@ cp ~/Dropbox/id_rsa.pub ~/.ssh
 # Copy .dotfiles
 ./update_dotfiles.sh
 
-# Uses apple script to switch to the dark theme
-osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
+# Use brew installed util for switching dark mode on/off
+dark-mode
